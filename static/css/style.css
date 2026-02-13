@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d1117;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+.bg-animation {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, #1f6feb, transparent),
+                radial-gradient(circle at 70% 70%, #9333ea, transparent);
+    animation: moveBg 15s infinite linear;
+    z-index: -1;
+}
+
+@keyframes moveBg {
+    50% { transform: translate(-5%, -5%); }
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-content {
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: gray;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg,#1f6feb,#9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg,#1f6feb,#9333ea);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 15px #9333ea;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background: linear-gradient(45deg,#1f6feb,#9333ea);
+}
+
+.tab-content {
+    display: none;
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+}
