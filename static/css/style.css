@@ -1,102 +1,77 @@
-/* Google Font feel */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* =========================
+   SOLO TREE COMMUNITY UI
+========================= */
 
-/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
 }
 
-/* Animated gradient background */
 body {
+  color: #fff;
   min-height: 100vh;
-  color: white;
-  background: linear-gradient(-45deg, #667eea, #764ba2, #ff6a00, #ee0979);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+  background: linear-gradient(135deg, #4e6b3a, #7b7f3f);
+  overflow-x: hidden;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
-/* Navbar */
+/* ================= Header ================= */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding: 18px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 30px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
 }
 
-header h1 {
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.menu-btn {
   font-size: 22px;
-  font-weight: 700;
+  cursor: pointer;
 }
 
-/* Nav links */
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 18px;
-  font-weight: 500;
-  position: relative;
-  transition: 0.3s;
-}
 
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -4px;
-  background: #ffd369;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #ffd369;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Hero */
+/* ================= Hero ================= */
 .hero {
-  text-align: center;
-  margin-top: 120px;
-  padding: 20px;
+  padding: 40px 20px;
+  margin-top: 30px;
 }
 
-.hero h2 {
+.hero h1 {
   font-size: 42px;
-  margin-bottom: 15px;
-  font-weight: 700;
+  font-weight: 800;
+  line-height: 1.1;
 }
 
 .hero p {
+  margin-top: 15px;
   opacity: 0.9;
-  margin-bottom: 25px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-/* Button */
+
+/* ================= Buttons ================= */
 .btn {
+  margin-top: 20px;
   display: inline-block;
-  padding: 14px 30px;
-  background: #ffd369;
-  color: black;
-  border-radius: 30px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: #4caf50;
+  color: white;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
@@ -104,64 +79,99 @@ nav a:hover::after {
 
 .btn:hover {
   transform: translateY(-3px);
-  background: white;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  background: #66bb6a;
 }
 
-/* Section */
-section {
-  padding: 60px 20px;
-}
 
-/* Cards layout */
-#features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-/* Card */
-.card {
-  background: rgba(255, 255, 255, 0.15);
-  width: 260px;
-  margin: 15px;
-  padding: 25px;
-  border-radius: 18px;
+/* ================= Big Card ================= */
+.big-card {
+  margin: 30px 20px;
+  padding: 30px 20px;
+  border-radius: 25px;
+  background: rgba(0,0,0,0.15);
   backdrop-filter: blur(10px);
-  transition: 0.3s;
   text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  background: rgba(255, 255, 255, 0.25);
+.big-card h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
-.card h3 {
+
+/* ================= Grid Cards ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(0,0,0,0.15);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(0,0,0,0.25);
+}
+
+.card img {
+  width: 80px;
   margin-bottom: 10px;
 }
 
-/* Footer */
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+
+/* ================= Floating Up Button ================= */
+.top-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: rgba(0,0,0,0.25);
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.top-btn:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ================= Footer ================= */
 footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
+  opacity: 0.8;
+  font-size: 14px;
 }
 
-/* Mobile responsive */
+
+/* ================= Mobile ================= */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  .hero h2 {
-    font-size: 28px;
+  .hero h1 {
+    font-size: 32px;
   }
 }
