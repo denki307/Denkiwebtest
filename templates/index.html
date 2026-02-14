@@ -1,74 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Denki AI Music Bot</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="bg-glow"></div>
+  <!-- Header -->
+  <header>
+    <h1>My Website</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">⚡ Denki Music</div>
-        <div class="status">
-            <span class="dot" id="statusDot"></span>
-            <span id="statusText">Checking...</span>
-        </div>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h2 id="typing"></h2>
+    <p>Create awesome projects easily ✨</p>
+    <a href="#features" class="btn">Explore</a>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="card">
+      <h3>Fast ⚡</h3>
+      <p>Lightweight and super fast website.</p>
     </div>
-</nav>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Next-Gen Telegram Music Experience</h1>
-    <p>Ultra Fast • 320kbps Quality • AI Powered • Zero Lag</p>
-
-    <div class="hero-buttons">
-        <a href="https://t.me/MUSIC_BOT_WORLD" class="btn-primary">🚀 Launch Bot</a>
-        <a href="https://t.me/denki1234" class="btn-secondary">👨‍💻 Developer</a>
+    <div class="card">
+      <h3>Modern 🎨</h3>
+      <p>Clean UI with gradient styles.</p>
     </div>
-</section>
 
-<!-- FEATURES -->
-<section class="features">
+    <div class="card">
+      <h3>Easy 🛠️</h3>
+      <p>Simple structure for beginners.</p>
+    </div>
+  </section>
 
-<h2>Premium Features</h2>
+  <!-- Footer -->
+  <footer id="contact">
+    <p>© 2026 My Website. All rights reserved.</p>
+  </footer>
 
-<div class="feature-grid">
-
-<div class="card">
-<h3>🎵 High Quality Streaming</h3>
-<p>Crystal clear 320kbps audio with zero delay playback from major platforms.</p>
-</div>
-
-<div class="card">
-<h3>🎛 Smart Controls</h3>
-<p>Advanced queue, shuffle, repeat, volume boost and speed control.</p>
-</div>
-
-<div class="card">
-<h3>🎧 Audio Enhancement</h3>
-<p>Bass boost, equalizer, crossfade and automatic sound optimization.</p>
-</div>
-
-<div class="card">
-<h3>🎪 Interactive System</h3>
-<p>Live lyrics, song recognition and intelligent search suggestions.</p>
-</div>
-
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Denki Music Bot • Built for Telegram Users</p>
-</footer>
+  <!-- JS -->
+  <script src="script.js"></script>
 
 </body>
 </html>
