@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solo Tree Community</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denki AI Music Bot</title>
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
 </head>
-
 <body>
 
-  <!-- ================= Header ================= -->
-  <header>
-    <div class="logo">🌳 SOLO TREE</div>
-    <div class="menu-btn">☰</div>
-  </header>
+<div class="bg-glow"></div>
 
-
-  <!-- ================= Hero ================= -->
-  <section class="hero">
-    <h1>Grow Together<br>With Community 🚀</h1>
-    <p>
-      Join our powerful community platform.  
-      Get updates, support and amazing features.
-    </p>
-    <a href="#join" class="btn">Join Now</a>
-  </section>
-
-
-  <!-- ================= Big Card ================= -->
-  <div class="big-card" id="join">
-    <h2>Support the Community ❤️</h2>
-    <p>Help us grow bigger and build more tools.</p>
-    <a href="#" class="btn">Donate</a>
-  </div>
-
-
-  <!-- ================= Grid ================= -->
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
-      <h3>Announcements</h3>
-      <p>Latest news and updates.</p>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">⚡ Denki Music</div>
+        <div class="status">
+            <span class="dot" id="statusDot"></span>
+            <span id="statusText">Checking...</span>
+        </div>
     </div>
+</nav>
 
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png">
-      <h3>Community</h3>
-      <p>Meet and connect with members.</p>
+<!-- HERO -->
+<section class="hero">
+    <h1>Next-Gen Telegram Music Experience</h1>
+    <p>Ultra Fast • 320kbps Quality • AI Powered • Zero Lag</p>
+
+    <div class="hero-buttons">
+        <a href="https://t.me/MUSIC_BOT_WORLD" class="btn-primary">🚀 Launch Bot</a>
+        <a href="https://t.me/denki1234" class="btn-secondary">👨‍💻 Developer</a>
     </div>
+</section>
 
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png">
-      <h3>Downloads</h3>
-      <p>Access useful resources.</p>
-    </div>
+<!-- FEATURES -->
+<section class="features">
 
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1827/1827349.png">
-      <h3>Support</h3>
-      <p>We are here to help you.</p>
-    </div>
+<h2>Premium Features</h2>
 
-  </div>
+<div class="feature-grid">
 
+<div class="card">
+<h3>🎵 High Quality Streaming</h3>
+<p>Crystal clear 320kbps audio with zero delay playback from major platforms.</p>
+</div>
 
-  <!-- ================= Footer ================= -->
-  <footer>
-    © 2026 Solo Tree Community. All rights reserved.
-  </footer>
+<div class="card">
+<h3>🎛 Smart Controls</h3>
+<p>Advanced queue, shuffle, repeat, volume boost and speed control.</p>
+</div>
 
+<div class="card">
+<h3>🎧 Audio Enhancement</h3>
+<p>Bass boost, equalizer, crossfade and automatic sound optimization.</p>
+</div>
 
-  <!-- ================= Top Button ================= -->
-  <div class="top-btn">⬆</div>
+<div class="card">
+<h3>🎪 Interactive System</h3>
+<p>Live lyrics, song recognition and intelligent search suggestions.</p>
+</div>
 
+</div>
+</section>
 
-  <script src="script.js"></script>
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Denki Music Bot • Built for Telegram Users</p>
+</footer>
+
 </body>
 </html>
