@@ -7,8 +7,8 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-
 </head>
+
 <body>
 
 <div class="bg-glow"></div>
@@ -35,9 +35,49 @@
     </div>
 </section>
 
+<!-- ================= AUTH SYSTEM ================= -->
+
+<section class="auth">
+<h2>User System</h2>
+
+<div class="auth-grid">
+
+<!-- Register -->
+<div class="card">
+<h3>📝 Register</h3>
+<input id="regUsername" placeholder="Username">
+<input id="regPassword" type="password" placeholder="Password">
+<button onclick="register()" class="btn-primary">Create Account</button>
+</div>
+
+<!-- Login -->
+<div class="card">
+<h3>🔐 Login</h3>
+<input id="loginUsername" placeholder="Username">
+<input id="loginPassword" type="password" placeholder="Password">
+<button onclick="login()" class="btn-primary">Login</button>
+<button onclick="logout()" class="btn-secondary">Logout</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= ADMIN PANEL ================= -->
+
+<section class="admin">
+<h2>⚡ Admin Post System</h2>
+
+<div class="card">
+<textarea id="postContent" placeholder="Write announcement / update..."></textarea>
+<button onclick="adminPost()" class="btn-primary">Publish</button>
+</div>
+
+</section>
+
+
 <!-- FEATURES -->
 <section class="features">
-
 <h2>Premium Features</h2>
 
 <div class="feature-grid">
