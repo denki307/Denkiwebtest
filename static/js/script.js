@@ -1,76 +1,93 @@
-/* ===============================
-   SOLO TREE COMMUNITY SCRIPT
-=============================== */
+// =======================
+// Live Status Check
+// =======================
+fetch("/status")
+.then(res => res.json())
+.then(data => {
+    const dot = document.getElementById("statusDot");
+    const text = document.getElementById("statusText");
 
-
-/* ===== Smooth Scroll ===== */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href"))
-      .scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-
-/* ===== Scroll Reveal ===== */
-const cards = document.querySelectorAll(".card, .big-card");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
+    if (data.status === "online") {
+        dot.style.background = "#00ffaa";
+        text.innerText = "Online";
+    } else {
+        dot.style.background = "red";
+        text.innerText = "Offline";
     }
-  });
-});
-
-cards.forEach(card => {
-  card.style.opacity = "0";
-  card.style.transform = "translateY(40px)";
-  card.style.transition = "all 0.6s ease";
-  observer.observe(card);
+})
+.catch(() => {
+    document.getElementById("statusText").innerText = "Unknown";
 });
 
 
-/* ===== Top Button ===== */
-const topBtn = document.querySelector(".top-btn");
+// =======================
+// Register
+// =======================
+function register() {
+    const username = document.getElementById("regUsername").value;
+    const password = document.getElementById("regPassword").value;
 
-if (topBtn) {
-  topBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
+    fetch("/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message))
+    .catch(() => alert("Register failed"));
 }
 
 
-/* ===== Menu Toggle (if added) ===== */
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
+// =======================
+// Login
+// =======================
+function login() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
 
-if (menuBtn && nav) {
-  menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("show");
-  });
+    fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+
+        // save token
+        if (data.token) {
+            localStorage.setItem("token", data.token);
+        }
+    })
+    .catch(() => alert("Login failed"));
 }
 
 
-/* ===== Ripple Button Effect ===== */
-document.querySelectorAll(".btn").forEach(button => {
-  button.addEventListener("click", function (e) {
-    const circle = document.createElement("span");
-    const diameter = Math.max(this.clientWidth, this.clientHeight);
+// =======================
+// Admin Post System
+// =======================
+function adminPost() {
+    const content = document.getElementById("postContent").value;
+    const token = localStorage.getItem("token");
 
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${e.clientX - this.offsetLeft - diameter / 2}px`;
-    circle.style.top = `${e.clientY - this.offsetTop - diameter / 2}px`;
-    circle.classList.add("ripple");
+    fetch("/admin/post", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
+        },
+        body: JSON.stringify({ content })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message))
+    .catch(() => alert("Post failed"));
+}
 
-    const ripple = this.getElementsByClassName("ripple")[0];
-    if (ripple) ripple.remove();
 
-    this.appendChild(circle);
-  });
-});
+// =======================
+// Logout
+// =======================
+function logout() {
+    localStorage.removeItem("token");
+    alert("Logged out");
+}
